@@ -1,7 +1,11 @@
-import Data from'./dummyData'
-import { AgGridReact } from 'ag-grid-react';
+import React from 'react';
+import names from'./dummyData'
+import idPairs from './pairIdsData'
 
 function PairView() {
+  let colA = [];
+  let colB = [];
+
   return (
     <div className="PairView">
       <h2>Find your conversation partner:</h2>
@@ -12,20 +16,29 @@ function PairView() {
               <th>Name 2</th>
             </tr>
           </thead>
-          <tbody>
-            
-            {
-              Data.map((d) => 
-                <tr>
-                  <td>{d.firstname} {d.lastname}</td>
-                  <td>{d.firstname} {d.lastname}</td>
-                </tr>)
-            }
-            
-          </tbody>
+            <tbody>
+              <tr>
+              {
+
+                idPairs.forEach((pair) => { //convert pairs into stacks of As & Bs
+                  colA.push(pair.a);
+                  colB.push(pair.b);
+                  let colANames = names.filter((p) => p.id === colA[0]);
+                  console.log(colANames[0].firstname); //why is this printig twice??
+                      <td>
+                        { colANames[0].firstname }
+                      </td>
+              }) 
+              }
+             </tr>
+            </tbody>
+          
         </table>
     </div>
   );
+
+
+  
 }
 
 export default PairView;
