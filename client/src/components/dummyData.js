@@ -18,5 +18,15 @@ export default [
         id:4,
         firstname: "Jamie",
         lastname: "Oliver",
+    },
+    {
+        id:5,
+        firstname: "Mirka",
+        lastname: "Good",
+    },
+    {
+        id:6,
+        firstname: "Abi",
+        lastname: "Fitz",
     }
 ]

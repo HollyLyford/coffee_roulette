@@ -16,22 +16,32 @@ function PairView(props) {
           </thead>
             <tbody>
               {
-               allPairs.forEach((pair) => {
+               allPairs.map((pair) => (
                 <tr>
                   <td>
-                    {
-                    `${names.filter(n => n.id === pair.a)[0].firstname} ${names.filter(n => n.id === pair.a)[0].lastname}`
-                    }
+                  {
+                    names.filter(n => n.id === pair.a)[0].firstname
+                  }
+                  {" "}
+                  {
+                    names.filter(n => n.id === pair.a)[0].lastname
+                  }
                   </td>                   
                   <td>
                     {
-                     `${names.filter(n => n.id === pair.b)[0].firstname} ${names.filter(n => n.id === pair.b)[0].lastname}`
+                    names.filter(n => n.id === pair.b)[0].firstname
+                    }
+                    {" "}
+                    {
+                      names.filter(n => n.id === pair.b)[0].lastname
                     }
                   </td>
                  </tr>
-               })}
+               ))}
             </tbody>       
         </table>
+      
+        
     </div>
   );
 
