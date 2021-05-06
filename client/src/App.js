@@ -4,6 +4,7 @@ import Home from './components/Home'
 import PairView from './components/PairView'
 import Navbar from './components/Navbar'
 import idPairs from './components/pairIdsData'
+import Routes from './components/Routes'
 
 function App() {
 
@@ -11,9 +12,7 @@ function App() {
     <div className="App">
       <Navbar /> 
       <h1>🤝👋☕Coffee Roulette☕👋🤝</h1>
-      <Home />
-      <PairView  allPairs ={idPairs}/>
-
+      <Routes />
     </div>
   );
   }

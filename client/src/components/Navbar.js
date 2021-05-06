@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(){
 
     return(
-        <div className="Navbar">
-            <nav>
-                <button type="button">Home</button>
-                <button type="button">How does it work?</button>
-                <button type="button">Find your match!</button>
-                <button type="button">Admin Login</button>
-            </nav>
-        </div>
+        <nav className="Navbar">
+          <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/about">How does it work?</NavLink></li>
+                <li><NavLink to="/match">Find your match!</NavLink></li>
+                <li><NavLink to="/admin">Admin Login</NavLink></li>
+            </ul>
+        </nav>
     )
 }
 

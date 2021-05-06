@@ -1,7 +1,6 @@
 import React from 'react';
 import names from'./dummyData'
 
-
 function PairView(props) {
   let allPairs = props.allPairs;
 
