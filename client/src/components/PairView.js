@@ -1,10 +1,9 @@
 import React from 'react';
 import names from'./dummyData'
-import idPairs from './pairIdsData'
 
-function PairView() {
-  let colA = [];
-  let colB = [];
+
+function PairView(props) {
+  let allPairs = props.allPairs;
 
   return (
     <div className="PairView">
@@ -17,22 +16,22 @@ function PairView() {
             </tr>
           </thead>
             <tbody>
-              <tr>
               {
-
-                idPairs.forEach((pair) => { //convert pairs into stacks of As & Bs
-                  colA.push(pair.a);
-                  colB.push(pair.b);
-                  let colANames = names.filter((p) => p.id === colA[0]);
-                  console.log(colANames[0].firstname); //why is this printig twice??
-                      <td>
-                        { colANames[0].firstname }
-                      </td>
-              }) 
-              }
-             </tr>
-            </tbody>
-          
+               allPairs.forEach((pair) => {
+                <tr>
+                  <td>
+                    {
+                    `${names.filter(n => n.id === pair.a)[0].firstname} ${names.filter(n => n.id === pair.a)[0].lastname}`
+                    }
+                  </td>                   
+                  <td>
+                    {
+                     `${names.filter(n => n.id === pair.b)[0].firstname} ${names.filter(n => n.id === pair.b)[0].lastname}`
+                    }
+                  </td>
+                 </tr>
+               })}
+            </tbody>       
         </table>
     </div>
   );
