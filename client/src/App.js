@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Home from './components/Home'
 import PairView from './components/PairView'
 import Navbar from './components/Navbar'
-import idPairs from './components/pairIdsData'
 import Routes from './components/Routes'
 import AdminView from './components/AdminView';
 

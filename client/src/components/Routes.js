@@ -7,14 +7,23 @@ import PairView from './PairView';
 import LogIn from './LogIn';
 import AdminView from './AdminView'
 
-import idPairs from './pairIdsData';
-
 function Routes(props) {
-    const[pairs, setPairs] = useState(idPairs)
+
+    let initialPairs = [
+        {
+            a: 1,
+            b: 2
+        },
+        {
+            a: 3,
+            b:4
+        },
+    ]
+
+    const[pairs, setPairs] = useState(initialPairs)
     function shufflePairs(ids){
         setPairs([]);
         for (let i = 0; i < ids.length; i+=2){
-            let newArr = []
               setPairs(newArr => [...newArr, {"a": ids[i], "b": ids[i+1]}])
         }
       }

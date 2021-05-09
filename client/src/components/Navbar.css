@@ -1,0 +1,18 @@
+.Navbar {
+    border: 1px solid white;
+    background-color: #ff9a8c;
+}
+
+.Navbar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.Navbar li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.Navbar a{
+    padding: 10px;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-// import idPairs from './pairIdsData';
 import names from'./dummyData'
 
 function AdminView(props) {
