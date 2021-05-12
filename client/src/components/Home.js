@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
     function handleClick(){
@@ -9,7 +10,7 @@ function Home() {
     return (
       <div className="Home">
         <p>Are you missing those office water cooler moments whilst WFH? Get paired with a colleague for a chat!</p>
-        <button type="button" onClick={handleClick}>Find your match!</button>
+        <button type="button"><Link to="/match">Find your match!</Link></button>
       </div>
     );
   }

@@ -6,26 +6,30 @@ import HomeView from './Home';
 import PairView from './PairView';
 import LogIn from './LogIn';
 import AdminView from './AdminView'
+import names from'./dummyData';
 
 function Routes(props) {
 
     let initialPairs = [
-        {
-            a: 1,
-            b: 2
-        },
-        {
-            a: 3,
-            b:4
-        },
-    ]
-
+        { a: 1, b: 2 },
+        { a: 3, b:4},]
     const[pairs, setPairs] = useState(initialPairs)
+    const[nameList, setNameList] = useState(names)
+    const [nextID, setNextID] = useState(names.length)
+
+    console.log(nameList)
+
     function shufflePairs(ids){
         setPairs([]);
         for (let i = 0; i < ids.length; i+=2){
               setPairs(newArr => [...newArr, {"a": ids[i], "b": ids[i+1]}])
         }
+      }
+    
+      function addPerson(p){
+          p.id = nextID;
+          setNextID(nextID => nextID + 1);
+          setNameList(nameList => [...nameList, p]);
       }
 
     return (
@@ -37,7 +41,7 @@ function Routes(props) {
     
             {/* pairs */}
             <Route path="/match">
-                <PairView allPairs={pairs} />
+                <PairView allPairs={pairs} names={nameList}/>
             </Route>
 
             <Route path="/login">
@@ -45,7 +49,11 @@ function Routes(props) {
             </Route>
 
             <Route path="/admin">
-                <AdminView shuffleCb={(ids) => shufflePairs(ids)} />
+                <AdminView 
+                    names={nameList} 
+                    shuffleCb={(ids) => shufflePairs(ids)}
+                    submitCb={(p) => addPerson(p)}
+                />
             </Route>
         </Switch>
     );

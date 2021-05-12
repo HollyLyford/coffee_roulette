@@ -1,12 +1,33 @@
-import React from 'react';
-import names from'./dummyData'
+import React, { useState } from 'react';
+
+// const emptyForm = {
+//   firstname: "",
+//   lastname: "",
+// }
 
 function AdminView(props) {
+  let names = props.names;
+  const [peopleData, setPeopleData] = useState([names])
+
+  
+  function handleInputChange(event){
+      const { name, value } = event.target;
+        //seems to be adding all values into object? why?????????
+      let newFormData = {...peopleData};
+      newFormData = {[name]: value};
+      setPeopleData(data => newFormData);
+
+    //   setPeopleData(data => ({
+    //     ...data,  // "spread" all existing state values
+    //     [name]: value  // overwrite the value for the field just typed into
+    // }));
+      }
+
+
     function handleSubmit(event){
         event.preventDefault();
-        console.log("submit")
-        //submit
-        //increment ID 
+        //pass to parent
+        props.submitCb(peopleData)
       }
 
     function handleClick(){
@@ -38,10 +59,20 @@ function AdminView(props) {
         <h2>Add New People:</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
             <label>First Name
-                <input type="text"/>
+                <input 
+                  type="text"
+                  name="firstname"
+                  value={peopleData.firstname}
+                  onChange={e => handleInputChange(e)}
+                />
             </label>
             <label>Last Name
-                <input type="text"/>
+                <input 
+                  type="text"
+                  name="lastname"
+                  value={peopleData.lastname}
+                  onChange={e => handleInputChange(e)}
+                />
             </label>
             <button type="submit">Submit</button>
         </form>

@@ -1,8 +1,9 @@
 import React from 'react';
-import names from'./dummyData'
+import './PairView.css';
 
 function PairView(props) {
   let allPairs = props.allPairs;
+  let names = props.names;
 
   return (
     <div className="PairView">
@@ -17,7 +18,7 @@ function PairView(props) {
             <tbody>
               {
                allPairs.map((pair) => (
-                <tr>
+                <tr key={pair.a}>
                   <td>
                   {
                     names.filter(n => n.id === pair.a)[0].firstname

@@ -22,7 +22,7 @@ export default [
     {
         id:5,
         firstname: "Mirka",
-        lastname: "Good",
+        lastname: "Goodman",
     },
     {
         id:6,
