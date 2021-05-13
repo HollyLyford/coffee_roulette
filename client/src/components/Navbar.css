@@ -1,6 +1,6 @@
 .Navbar {
     border: 1px solid white;
-    background-color: #ff9a8c;
+    background-color: #1CB5B9;
 }
 
 .Navbar ul{
@@ -15,4 +15,5 @@
 
 .Navbar a{
     padding: 10px;
+    color: #FFFFFF
 }

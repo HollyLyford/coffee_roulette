@@ -7,7 +7,7 @@ function LogIn(props) {
     return (
       <div className="LogIn">
         <h2>Click to Log In:</h2>
-        <NavLink to="/admin">LOG IN</NavLink>
+        <NavLink to="/admin" className="tealLinks">LOG IN</NavLink>
         
       </div>
     );

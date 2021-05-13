@@ -1,17 +1,18 @@
 import './App.css';
-import React, { useState } from 'react';
-import Home from './components/Home'
-import PairView from './components/PairView'
+import React from 'react';
 import Navbar from './components/Navbar'
 import Routes from './components/Routes'
-import AdminView from './components/AdminView';
 
 function App() {
 
   return (
     <div className="App">
       <Navbar /> 
-      <h1>🤝👋☕Coffee Roulette☕👋🤝</h1>
+      <div className="header">
+        <h1>Coffee Roulette</h1>
+        <h3>👋☕🤝</h3>
+      </div>
+      {/* <img src="https://static.vecteezy.com/system/resources/thumbnails/000/091/124/small/free-business-meeting-tables-vector-icons.jpg" /> */}
       <Routes />
     </div>
   );

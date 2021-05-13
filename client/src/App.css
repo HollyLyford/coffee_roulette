@@ -1,3 +1,36 @@
 .App {
+    color:#393E46;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    background-color: #F2EDDB;
+    margin: 1px;
+    padding: 1px;
+}
+
+h1{
+    color: #B76E22;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', fantasy;
+    font-weight: 100;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin: 20px; 
+    margin-bottom: 0px;
+}
+h3{
+    font-size: 30px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.Home li {
+    list-style-type: none;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.tealLinks{
+    color: #1CB5B9; 
 }

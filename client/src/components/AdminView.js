@@ -6,53 +6,23 @@ import React, { useState } from 'react';
 // }
 
 function AdminView(props) {
-  let names = props.names;
-  const [peopleData, setPeopleData] = useState([names])
+  const [newFirstname, setNewFirstname] = useState("")
+  const [newLastname, setNewLastname] = useState("")
 
-  
-  function handleInputChange(event){
-      const { name, value } = event.target;
-        //seems to be adding all values into object? why?????????
-      let newFormData = {...peopleData};
-      newFormData = {[name]: value};
-      setPeopleData(data => newFormData);
+  function handleSubmit(event){
+      event.preventDefault();
+      let newPerson = { firstname: newFirstname, lastname:newLastname }
+      window.alert(`${newPerson.firstname} ${newPerson.lastname} has been added`)
 
-    //   setPeopleData(data => ({
-    //     ...data,  // "spread" all existing state values
-    //     [name]: value  // overwrite the value for the field just typed into
-    // }));
-      }
-
-
-    function handleSubmit(event){
-        event.preventDefault();
-        //pass to parent
-        props.submitCb(peopleData)
-      }
-
-    function handleClick(){
-        //collect all IDs from names
-        let currentIDs = []
-        names.forEach((name => currentIDs.push(name.id)))
-        //shuffle
-        shuffle(currentIDs)
-        props.shuffleCb(currentIDs)
+      //pass to parent
+      props.submitCb(newPerson)
+      setNewFirstname("")
+      setNewLastname("")
     }
 
-    function shuffle(ids) {
-        let m = ids.length, t, i;
-        // While there remain elements to shuffle…
-            while (m) {
-            // Pick a remaining element…
-            i = Math.floor(Math.random() * m--);
-            // And swap it with the current element.
-            t = ids[m];
-            ids[m] = ids[i];
-            ids[i] = t;
-            }
-            //https://bost.ocks.org/mike/shuffle/
-        return ids; 
-    }
+  function handleClick(){
+      props.shuffleCb()
+  }
   
     return (
       <div className="AdminView">
@@ -62,16 +32,16 @@ function AdminView(props) {
                 <input 
                   type="text"
                   name="firstname"
-                  value={peopleData.firstname}
-                  onChange={e => handleInputChange(e)}
+                  value={newFirstname}
+                  onChange={e => setNewFirstname(e.target.value)}
                 />
             </label>
             <label>Last Name
                 <input 
                   type="text"
                   name="lastname"
-                  value={peopleData.lastname}
-                  onChange={e => handleInputChange(e)}
+                  value={newLastname}
+                  onChange={e => setNewLastname(e.target.value)}
                 />
             </label>
             <button type="submit">Submit</button>
