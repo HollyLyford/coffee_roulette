@@ -1,5 +1,10 @@
 # coffee_roulette
+## Setup
 
+Run `npm install` to install packages.
+Run `npm start` to run the development server.
+
+## Summary
 Coffee Roulette is a Front-End JS app, created as an MVP project by Holly Lyford.
 A user flow can be found here:
 ![](/assets/User_flow.PNG)
