@@ -1,6 +1,7 @@
 # coffee_roulette
 ## Setup
 
+While the file is called "my-fullstack-app", only the frontend is active. cd into the client folder & run npm to view.
 Run `npm install` to install packages.
 Run `npm start` to run the development server.
 
