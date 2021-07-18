@@ -18,6 +18,10 @@ function Home() {
         </ul>
         <br />
         <em style={{ "font-size": "12px" }} >Contact an admin to get added to the list. Users will be updated & re-shuffled every Friday.</em>
+        <br />
+        <footer>
+          <p style={{ "font-size": "10px" }} > This is a student project that was created at CodeOp, a full stack development bootcamp in Barcelona.</p>
+        </footer>
       </div>
     );
   }

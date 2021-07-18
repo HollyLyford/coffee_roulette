@@ -1,32 +1,32 @@
 export default [
     {
         id: 1,
-        firstname: "Holly",
-        lastname: "Lyford",
-    },
-    {
-        id: 2,
-        firstname: "Ila",
+        firstname: "Harry",
         lastname: "Potter",
     },
     {
+        id: 2,
+        firstname: "Hermione",
+        lastname: "Granger",
+    },
+    {
         id:3,
-        firstname: "Viviane",
-        lastname: "Westwood",
+        firstname: "Ron",
+        lastname: "Weasley",
     },
     {
         id:4,
-        firstname: "Jamie",
-        lastname: "Oliver",
+        firstname: "Luna",
+        lastname: "Lovegood",
     },
     {
         id:5,
-        firstname: "Mirka",
-        lastname: "Goodman",
+        firstname: "Draco",
+        lastname: "Malfoy",
     },
     {
         id:6,
-        firstname: "Abi",
-        lastname: "Fitz",
+        firstname: "Severus",
+        lastname: "Snape",
     }
 ]

@@ -63,7 +63,9 @@ function App(props) {
         pairs={pairs}
         nameList={nameList}
       />
+
     </div>
+ 
   );
   }
 
